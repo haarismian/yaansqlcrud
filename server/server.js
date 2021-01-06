@@ -9,7 +9,7 @@ var corsOptions = {
 };
 
 //db connection, forcing dropping and re-syncing tables for dev purposes
-const db = require('./app/models');
+const db = require('./models');
 db.sequelize.sync({ force: true }).then(() => {
   console.log('Drop and re-sync db.');
 });
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // simple route
 app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to node application.' });
+  res.json({ message: 'Welcome to node application from haaris.' });
 });
 
 // set port, listen for requests
